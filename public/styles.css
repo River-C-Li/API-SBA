@@ -1,0 +1,27 @@
+.row, .cardbody, .shop-items, .cart-row{
+    display:flex;
+    justify-content: space-evenly;
+    width: 100%
+}
+ *{
+    background-color:white;
+
+ }
+
+
+ .shop-item{
+    border: 5px solid rgb(200, 174, 143);
+    padding: 50px 50px 50px 50px;
+    margin-bottom: 40px;
+ }
+
+ .btn-purchase{
+    padding:15px 15px 15px;
+    width: 200px
+ }
+
+ .login{
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 18px;
+ }

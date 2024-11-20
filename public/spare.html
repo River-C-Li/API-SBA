@@ -1,0 +1,66 @@
+<% product.forEach(product =>{ %>
+    <div class = "" >
+        
+        <h4><b> <%= product.product_name %> </b></h4>
+        <h3 class="" > <%= product.product_price %> </h3>
+        <form method="POST" action ="/add-cart">
+            <input type ="hidden" name ="product_id" value = "<%= product.product_id %>" />
+            <input type ="hidden" name ="product_name" value =" <%= product.product_name %>" />
+            <input type = "hidden" name ="product_price" value =" <%= product.product_price %>" />
+            <input type ="submit" class ="btn btn_warning" value =" Add To Cart" />
+        </form>
+    </div>
+    <% }); %>
+    <!-- <img src = "/images/<%= product.imageName %>" class="" /> -->
+    <!-- // imageName: desktop2, -->
+     
+    <ul>
+        <% product.forEach(product => { %>
+          <li>
+            <%= product.product_name %> - <%= product.product_price %>
+          </li>
+        <% }); %>
+      </ul>
+      onclick="remove_item(<%= item.product_id %>)"
+
+    <table class="table">
+        <tr>
+            <th>item name</th>
+            <th>quantity</th>
+            <th>unit price</th>
+            <th>total price</th>
+            <th>remove</th>
+        </tr>
+        <%
+        if(cart.length > 0)
+        {
+            let total = 0;
+            cart.forEach(item => {
+                %>
+                <tr>
+                    <td><%= item.product_name %> </td>
+                    <td><%= item.quantity %> </td>
+                    <td><%= item.product_price %> </td>
+                    <td><%= parseFloat(item.quantity)* parseFloat(item.product_price) %> </td>
+                    <td><button type="button" class= "btn btn-danger btn-sm"    onclick="remove_item(<%= item.product_id %>)" > Remove</button></td>
+                 
+                </tr>
+                <%   
+                total += parseFloat(item.quantity)* parseFloat(item.product_price);
+            })
+             %>
+            <tr>
+                <td colspan="3" aling="right"><b>Total</b></td>
+                <td> <%= total %></td>
+                <td>&nbsp;</td>
+            </tr>
+            <%
+        } else {
+            %>
+            <tr>
+                <td colspan="5" aling="center">no item found in cart</td>
+            </tr>
+            <%   
+        }
+        %>
+    </table>

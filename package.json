@@ -1,0 +1,27 @@
+{
+  "name": "login-shopping-cart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "author": "River Li",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}
